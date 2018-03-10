@@ -3,6 +3,7 @@ const DEFAULT_CONFIG = {
     brick_width: 30,
     snake_speed: 300,
 }
+
 const WALL_KEY = 1;
 const FOOD_KEY = 2;
 const SNAKE_KEY = 3;

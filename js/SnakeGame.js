@@ -1,4 +1,9 @@
 /**
+* SnakeGame class has dependency on constant.js.
+* So if you want to use this class, don't forget to include constant.js first
+*/
+
+/**
 * @class SnakeGame
 */
 class SnakeGame {
@@ -49,13 +54,15 @@ class SnakeGame {
     }
 
     /**
-    * @method initGameArea // Init game area including wall
+    * @method initGameArea // Init game area including wall and instructions
     * @param {String} gameAreaId Element query Id to find the game area.
     */
     initGameArea(gameAreaId){
         this.containerElem.classList.add("game-container");
         this.containerElem.style.width = this.fullWidth + "px";
         this.containerElem.style.height = this.fullHeight + "px";
+        // // Init instruction
+        // this.instructions = document.createElement('div')
     }
 
     /**
@@ -248,6 +255,7 @@ class SnakeGame {
         // else the snake might hit the wall or eat itself. then the game over and restart again
         } else {
             document.removeEventListener('keydown', this.keyDownEventListener);
+            alert(`You died!!!! current score is ${this.score}. Good job!`)
             this.reset();
         }
     }

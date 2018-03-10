@@ -5,6 +5,17 @@
     background-color: coral;
 }
 
+.game-container:after{
+    content: 'To start and control the game, use arrows keys';
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    min-width: 260px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .playground {
     position: absolute;
     background-color: cornflowerblue;
