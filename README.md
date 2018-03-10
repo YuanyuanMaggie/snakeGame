@@ -7,7 +7,8 @@ This is the simple javascript game for the classic arcade game in which a player
 
 ## Play instructions
 
-* Use your arrow keys to control the moving sn
+* Open index.html file with your browser or visit [http://yuanyuanli.me/snakeGame/](http://yuanyuanli.me/snakeGame/)
+* Use your arrow keys to control the moving snake
 * Try to avoid the snake to collide with itself or a wall, the game would end. 
 
 
