@@ -1,0 +1,21 @@
+
+.game-container{
+    position: relative;
+    margin: 0 auto;
+    background-color: coral;
+}
+
+.playground {
+    position: absolute;
+    background-color: cornflowerblue;
+}
+
+.game-food{
+    position: absolute;
+    background: url('../images/heart.svg');
+}
+
+.game-snake{
+    position: absolute;
+    background-color: hotpink;
+}
