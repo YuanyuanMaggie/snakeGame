@@ -48,7 +48,8 @@ class SnakeGame {
         this.wallKey = WALL_KEY;
         this.foodKey = FOOD_KEY;
         this.snakeKey = SNAKE_KEY;
-        this.direction_dic = DIRECTION_DIC;
+        this.directionDic = DIRECTION_DIC;
+        this.oppositeCodeDic = OPPOSITE_DIRECTION_DIC;
         this.fullWidth = window.innerWidth - (window.innerWidth % this.brickWidth);
         this.fullHeight = window.innerHeight - (window.innerHeight % this.brickWidth);
     }
@@ -113,12 +114,12 @@ class SnakeGame {
     */
     initSnake(){
         this.cleanChildren('game-snake');
-        const snakeElem = this.createSnakeElem(1, 1);
+        this.snakeLength = 0;
+        const snakeElem = this.createSnakeElem(2, 2);
         this.snakeHead = snakeElem;
         this.snakeTail = snakeElem;
         // Make the snake node like a single linkedlist which know it's prev node.
         snakeElem.prev = snakeElem;
-        this.snakeLength = 1;
         this.score = 0;
     }
 
@@ -152,6 +153,7 @@ class SnakeGame {
         snake.elem.style.top = row * this.brickWidth + "px";
         this.chache[row][col] = this.snakeKey;
         this.containerElem.appendChild(snake.elem);
+        this.snakeLength++;
         return snake;
     }
 
@@ -234,9 +236,17 @@ class SnakeGame {
     * @method snakeMove make th snake move
     */
     snakeMove(){
-        const dic = this.direction_dic;
+        const dic = this.directionDic;
         if(this.eventQueue.length > 0){
-            this.currentDirection = this.eventQueue.shift();
+            const tempt = this.eventQueue.shift();
+            const oppositeCode = this.oppositeCodeDic[this.currentDirection]; // get the opposite direction
+            if(tempt !== oppositeCode || this.snakeLength === 1){
+                // For a better user experience, if the snake length larger than 1 and 
+                // if the next direction is opposite direction, we don't want the snake to change 
+                // direction and die. 
+                this.currentDirection = tempt;
+            }
+            
         }
         
         const nextNode = this.snakeHead;

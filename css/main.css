@@ -2,7 +2,7 @@
 .game-container{
     position: relative;
     margin: 0 auto;
-    background-color: coral;
+    background-color: lightslategray;
 }
 
 .game-container:after{
@@ -18,7 +18,7 @@
 
 .playground {
     position: absolute;
-    background-color: cornflowerblue;
+    background-color: white;
 }
 
 .game-food{
@@ -28,5 +28,5 @@
 
 .game-snake{
     position: absolute;
-    background-color: hotpink;
+    background-color: green;
 }

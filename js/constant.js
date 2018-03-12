@@ -25,3 +25,10 @@ const DIRECTION_DIC = {
         y: 1,
     },
 }
+
+const OPPOSITE_DIRECTION_DIC = {
+    37: 39,
+    38: 40,
+    39: 37,
+    40: 38,
+}

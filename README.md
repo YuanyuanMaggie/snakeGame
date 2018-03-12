@@ -12,7 +12,7 @@ This is the simple javascript game for the classic arcade game in which a player
 * Try to avoid the snake to collide with itself or a wall, the game would end. 
 
 
-## Library use instructions
+## Library instructions
 
 * `SnakeGame.js` has dependency on `constant.js`
 * To make a new game, you can use SnakeGame class, gameAreaId is required, but brick_width and snake_speed are optional
@@ -34,3 +34,7 @@ new SnakeGame({
 })
 
 ```
+
+## How to improve it?
+- Better playder instructions, for example, a modal pop up to give instruction when the game loaded. And another modal pop up if game over.
+- Give player a control panel to pause the game, change speed and level
